@@ -135,25 +135,49 @@ bot.on("message", async message => {
 
 
 if(cmd === `${prefix}BOTINFO`){
+
+	let duration = bot.uptime
+	var ms = (duration % 1000)/100
+	var s = Math.floor((duration/1000)%60)
+	var m = Math.floor((duration/(1000*60))%60)
+	var h = Math.floor((duration/(1000*60*60))%24)
+
+	s = (s < 10) ? "0" + s : s
+	m = (m < 10) ? "0" + m : m
+	h = (h < 10) ? "0" + h : h
+
+	var uptime = `${s} Seconds, ${m} Minutes, ${h} Hours`
+
   return message.channel.send({embed: {
     color: "0",
     title: "Bot info",
     fields: [{
       name: "Botname",
       value: "Animal Bot.",
+      inline: true
     },
     {
       name: "Creator",
-      value: "Aresiel#0666"
+      value: "Aresiel#0666",
+      inline: true
     },
     {
-      name: "Invite Link",
-      value: "[Click here!]( https://discordapp.com/oauth2/authorize?client_id=511117189835653150&scope=bot&permissions=52288)"
+      name: "Uptime",
+      value: uptime
     },
     {
       name: "Prefix",
       value: "A!",
+      inline: true
     },
+    {
+      name: "Github",
+      value: "[https://github.com/Aresiel/Animal-Bot](https://github.com/Aresiel/Animal-Bot)"	
+    },
+    {
+      name: "Invite Link",
+      value: "[Click here!]( https://discordapp.com/oauth2/authorize?client_id=511117189835653150&scope=bot&permissions=52288)"
+    }
 
   ],
     timestamp: new Date(),
