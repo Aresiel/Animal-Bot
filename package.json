@@ -1,0 +1,26 @@
+{
+  "name": "animal-bot",
+  "version": "0.0.1",
+  "description": "A Discord bot that sends animal pictures.",
+  "author": "Aresiel#0666",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "node-fetch": "^2.6.0",
+    "sequelize": "^5.21.7"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "discord",
+    "bot",
+    "discord.js",
+    "template"
+  ]
+}
