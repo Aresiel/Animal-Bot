@@ -14,6 +14,7 @@ var horseImages
 var pandaImages
 var wolfImages
 
+function getImages(){
   fetch(`https://pixabay.com/api/?key=${process.env.PIXABAYKEY}&q=koala+bear&per_page=100&safesearch=true`)
     .then(res => res.json())
     .then(json => {
@@ -38,7 +39,9 @@ var wolfImages
     wolfImages = json;
     
   });
-
+}
+getImages()
+setInterval(getImages, 1000*60*10)
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.cache.array().length} servers!`);
