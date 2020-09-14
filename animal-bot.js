@@ -6,9 +6,12 @@ const Discord = require("discord.js");
 const http = require('http');
 const Sequelize = require('sequelize');
 const fs = require('fs');
+const DBL = require("dblapi.js")
+
 
 
 const bot = new Discord.Client({disableEveryone: true});
+const dbl = new DBL(process.env.DBLTOKEN, bot)
 var koalaImages
 var horseImages
 var pandaImages
