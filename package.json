@@ -5,7 +5,7 @@
   "author": "Aresiel#0666",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node animal-bot.js"
   },
   "dependencies": {
     "dblapi.js": "^2.4.1",
