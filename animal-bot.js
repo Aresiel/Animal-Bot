@@ -8,7 +8,13 @@ const Sequelize = require('sequelize');
 const fs = require('fs');
 const DBL = require("dblapi.js")
 
-
+//For repl.it 24/7
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('ok');
+});
+server.listen(8080);
+console.log("Webserver Started")
 
 const bot = new Discord.Client({disableEveryone: true});
 const dbl = new DBL(process.env.DBLTOKEN, bot)
